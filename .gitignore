@@ -4,3 +4,4 @@
 # Ignore virtual environment folders
 .venv/
 env/
+0001_initial.py
