@@ -1,0 +1,19 @@
+{% extends 'todoApp/main.html' %}
+{% load static %}
+{% block content %}
+<div class ="top main-back" >
+<div id="back" style="align-items: center;justify-content:center;">
+    <a href="{% url 'tasks' %}"><img src="{% static 'images/icons8-back-48.png' %}" >back</a>
+</div>
+
+<div class="add-new-task">
+    <form method="POST">
+        {% csrf_token %}
+        <p id="no-task">Are your sure you want to delete this task? <b>"{{task}}"</b> </p>
+        <input class="search-btn" type="submit" value="Delete" style="margin-left: 40%"/>
+    </form>
+</div>
+
+</div>
+
+{% endblock content %}

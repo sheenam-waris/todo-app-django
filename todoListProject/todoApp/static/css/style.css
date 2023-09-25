@@ -1,0 +1,373 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.card {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-image: linear-gradient(163deg, #dc9ad0 0%, #6e55c8 100%);
+    border-radius: 22px;
+    transition: all .3s;
+  }
+  .card2 {
+      width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+        margin: 0% auto; 
+        padding-right: 2em;
+        padding-left: 1em;
+        padding-bottom: 0.4em;
+        background-color: #faecec;
+        border-radius: 20px;
+        transition: all .2s;
+    }
+  
+  .card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(130, 134, 241, 0.3);
+  }
+
+  h1{
+    text-align: center;
+    font-style: italic;
+    color: #3d306a;
+    font-size: 2rem;
+  }
+  
+  .login-form{
+    --bg-light: #efefef;
+    --bg-dark: #707070;
+    --clr: #e08cd7;
+    --clr-alpha: #9c9c9c60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5em;
+  }
+
+  .login-form input{
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.75rem;
+  border: none;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+  }
+  .login-form input:focus {
+  outline: 2px solid var(--clr);
+}
+
+
+
+
+
+.login-form label{
+align-self: flex-start;
+color: #1d0d58;
+  font-weight: 2rem;
+}
+.login-button{
+padding: 0.75em;
+  padding-left: 2.1em;
+  padding-right: 2.1em;
+  border-radius: 0.5rem;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-image: linear-gradient(163deg, #dc9ad0 0%, #6e55c8 100%);
+  color: rgb(248, 229, 229);
+}
+
+.login-button:hover {
+    background-image: linear-gradient(163deg, #77306b 0%, #13034b 100%);
+    color: rgb(226, 157, 163);
+  }
+
+.account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #707070;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.account a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #1d0d58;
+}
+
+.account a:hover{
+    color: #a79ad9;
+}
+
+
+/*----------home page -----------------*/
+#main-container{
+    display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px 1px rgba(171, 103, 160, 0.3);
+}
+
+
+.top{ 
+    display: inline-flex; /* Ensures the <a> element stays inline with the preceding elements */
+    align-items: center;
+    justify-content: center;
+    align-content:space-evenly;
+
+}
+.border-top{
+    width: 60%;
+    border: 1.5px solid #a4b8df;
+    border-radius: 8px;
+}
+.todo-head{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center ;
+    margin: 0 auto;
+    text-align: center; 
+      
+}
+.todo-head h1{
+    margin: 10px;
+}
+.todo-head #logo{
+    width: 40px;
+    height: 40px;   
+}
+#logout{
+    margin-right: 20px;
+}
+
+#logout img{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin-left: 0px;
+    right: 0;
+}
+#logout img:hover{
+    height: 30px;
+    width: 30px;
+}
+
+#no-task{
+    font-size: 1em;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #1d0d58;
+    line-height: 1.5rem;
+    margin: 2em auto; 
+    
+}
+#add-task-text{
+    font-weight: 600;
+    color: #b03c9d;
+    
+    margin-right: 10px;
+    
+}
+
+#task-count{
+    color: #1d0d58;
+  text-align: justify;
+    font-size: 0.8rem;
+    align-content: flex-start;
+    margin: 1em auto;
+    justify-content: left;
+    
+   
+}
+
+#add-task-logo img{
+    width: 30px;
+    height: 30px;
+    
+}
+#add-task-logo img:hover{
+    width: 40px;
+    height: 40px;
+}
+
+/*search*/
+.search-input-area{
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  background-color: #ddd8f3;
+  outline: 2px solid #707070;
+}
+
+.search-input-area:focus{
+    outline: 2px solid #b03c9d;
+}
+
+.search-btn{
+padding: 0.75em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0.5rem;
+  margin-left: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-image: linear-gradient(163deg, #dc9ad0 0%, #6e55c8 100%);
+  color: rgb(248, 229, 229);
+  cursor: pointer;
+}
+
+.search-btn:hover{
+    background-image: linear-gradient(163deg, #77306b 0%, #13034b 100%);
+    color: rgb(226, 157, 163);
+}
+.task-wrapper{
+    display: grid;
+    grid-template-columns: 1fr; 
+   
+    padding: 10px;
+    width: 60%;
+}
+.task-title{
+    display: inline-flex;
+    align-items: center;
+    align-content:space-evenly;
+    background-color: #f9d8d8dc;
+    border: 0.8px dotted #13034b;
+    border-radius: 8px;
+    padding: 7px;
+    
+    margin-bottom: 0.2em;
+}
+.task-title:hover{
+    background-color: #59575933;
+}
+
+
+
+.task-complete-icon {
+    width: 10px; 
+    height: 10px;
+    background-color: rgb(111, 201, 111); 
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.task-incomplete-icon {
+    width: 10px; 
+    height: 10px; 
+    background-color: rgb(183, 92, 92);
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+
+.task-title a {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: none; 
+    color: #13034b; 
+}
+.task-title a:hover{
+    color: #77306b; 
+}
+
+
+.task-title i s a {
+    text-decoration: line-through; 
+    color: #999; 
+    flex-grow: 1;
+}
+.delete-link {
+    margin-left: auto; 
+  }
+
+
+.delete-link img{
+    height: 20px;
+    width: 20px;
+    
+    
+}
+
+.delete-link:hover {
+    background-color: rgb(210, 163, 163);
+    border-radius: 50%; 
+}
+#back a{
+    
+    text-decoration: none;
+    color: #333; 
+
+}
+
+#back a img{
+   margin-top: 50px;
+    height: 20px;
+    width: 20px; 
+}
+
+.search-back{
+    margin-top: 30px;
+}
+
+
+.add-new-task{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    
+    align-items: center; 
+    gap: 0.5em;
+    margin: 2em auto; 
+}
+.main-back{
+    display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  background-color: #faecec;
+  border-radius: 20px;
+}
+
+
+
+@media (max-width: 700px) {
+    #main-container {
+        margin: 0; 
+        width: 100%;
+        position: absolute;
+    }  
+}

@@ -1,0 +1,111 @@
+{% extends 'todoApp/main.html' %} 
+{% load static %}
+{% block content %}
+<div id="main-container">
+        <div class="top border-top">
+        <div class="todo-head">
+        <img id="logo" src="{% static 'images/icons8-todo-list-48.png' %}">
+        <h1>ToDo's</h1>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a id="logout" href="{% url 'logout' %}"><img src="{% static 'images/icons8-logout-48.png' %}"></a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+
+        </div>
+        <hr>
+    
+    
+        <h3 id="task-count" ><i>{{count}}</i> pending task{{ count|pluralize:"s" }}</h3>
+
+
+        <div class="top">
+            <form method="GET" >
+                <input class="search-input-area" type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
+                <input class="search-btn" type="submit" value='Search'>
+            </form>
+            {% if search_input %}
+                <div id="back" class="search-back">
+                    <a href="{% url 'tasks' %}"><img src="{% static 'images/icons8-back-48.png' %}" ></a>
+                </div>
+            {% endif %}
+        </div>
+
+      
+        <div class="top" style="margin:10px;">
+            {% if tasks|length > 0 %}
+            
+            
+            <p id="add-task-text">Add Task</p>
+            <a id="add-task-logo" href="{% url 'task-create' %}"><img src="{% static 'images/icons8-add-64.png' %}"></a>
+            
+        {% endif %}
+        </div>
+        
+
+
+
+<form style="display: none;" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
+    {% csrf_token %}
+    <input type="hidden" id="positionInput" name="position">
+</form>
+
+
+
+    {% for task in tasks %}
+    <div class="task-wrapper" data-position="{{task.pk}}">
+  
+        <div class="task-title">
+            {% if task.complete %}
+            <div class="task-complete-icon"></div>
+            <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> 
+            {% else %}
+            <div class="task-incomplete-icon"></div>
+            <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
+        
+       
+         <a class="delete-link" href="{% url 'task-delete' task.id %}"><img src="{% static 'images/icons8-delete-48.png' %}"></a>
+            
+    </div>
+    </div>
+
+    
+
+    {% empty %}
+    <div id="no-task">
+        <h3 id="no-task">No tasks available </h3>
+        <h3 id="add-task">Create a <a href="{% url 'task-create' %}">New task</a> ! </h3>
+    </div>
+    {% endfor %}
+   </div>
+
+</div>
+
+<script>
+    var taskList = document.getElementById("tasklist");
+    var reorderForm = document.getElementById("reorderForm");
+    var positionInput = document.getElementById("positionInput");
+
+    let sortable = Sortable.create(taskList, {
+        handle: '.handle',
+        ghostClass: 'dropArea',
+        chosenClass: 'selectedTask',
+
+    });
+
+    function reordering() {
+        const rows = document.getElementsByClassName("task-wrapper");
+        let pos = [];
+        for (let row of rows) {
+            pos.push(row.dataset.position);
+        }
+        console.log(pos.join(","))
+        positionInput.value = pos.join(',');
+        reorderForm.submit();
+    }
+
+    document.ondrop = reordering
+</script>
+
+{% endblock content %}
