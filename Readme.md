@@ -1,7 +1,5 @@
 # Todo App
 
-![Website Image](todo-app.png)
-
 This is a simple Todo App built using Django framework and sqlite3 database
 It allows users to manage their tasks with the following features:
 
